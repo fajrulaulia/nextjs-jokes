@@ -27,16 +27,20 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h3>Load Jokes</h3>
 
-      <div className={styles.container}>
+        <h2>Jokes si Chuck Norris</h2>
+        <code>API : https://api.chucknorris.io/jokes/random</code>
+        <br/>
+        <br/>
+
         {
           jokesData?.value === null ?
-            <h1></h1> : <h1>{jokesData?.value}</h1>
+            <h3></h3> : <h3 style={{backgroundColor:"blue"}}>{jokesData?.value}</h3>
         }
         <button onClick={() => getJokesHandler()}>{titleButton}</button>
+        <br/>
         <button onClick={() => clearJokes()}>Clear Jokes</button>
-      </div>
+      
 
     </div>
   )

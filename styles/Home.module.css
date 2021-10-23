@@ -1,13 +1,20 @@
 .container {
-  min-height: 100vh;
-  padding:20vh;
+  padding:10vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  margin:0 auto;
+  background: linear-gradient(132deg, #ec5218, #1665c1);
+  background-size: 400% 400%;
+  animation: BackgroundGradient 30s ease infinite;
 }
-
+@keyframes BackgroundGradient {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
 .main {
   padding: 5rem 0;
   flex: 1;

@@ -20,13 +20,13 @@ describe('Test component : <Index/>', function () {
     });
 
     it('Test load component  <Index/> correctly', () => {
-        expect(wrapper.find('h3').text()).toEqual("Load Jokes");
+        expect(wrapper.find('h2').text()).toEqual("Jokes si Chuck Norris");
     });
 
 
     it('Test User Load Jokes by clicking button load jokes <Index/> correctly', async () => {
 
-        expect(wrapper.find('h3').text()).toEqual("Load Jokes");
+        expect(wrapper.find('h2').text()).toEqual("Jokes si Chuck Norris");
         expect(wrapper.find('button').at(0).text()).toEqual("Load Jokes")
 
         wrapper.find('button').at(0).simulate("click")
@@ -34,7 +34,7 @@ describe('Test component : <Index/>', function () {
         await flushPromises();
         wrapper.update();
 
-        expect(wrapper.find('h1').text()).toEqual("Chuck Norris can have three pairs in his poker hand.");
+        expect(wrapper.find('h3').text()).toEqual("Chuck Norris can have three pairs in his poker hand.");
         expect(wrapper.find('button').at(0).text()).toEqual("Next Jokes")
     });
 
@@ -43,7 +43,7 @@ describe('Test component : <Index/>', function () {
         wrapper.find('button').at(1).simulate("click")
         await flushPromises();
         wrapper.update();
-        expect(wrapper.find('h1').text()).toEqual("");
+        expect(wrapper.find('h3').text()).toEqual("");
         expect(wrapper.find('button').at(0).text()).toEqual("Load Jokes")
     });
 });
