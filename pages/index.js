@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import React from 'react'
 import styles from '../styles/Home.module.css'
-import JokeService from './services'
+import JokeService from '../services/services'
 export default function Home() {
   const [titleButton, setTitleButton] = React.useState("Load Jokes")
   const [jokesData, SetJokesData] = React.useState({})
