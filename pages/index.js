@@ -7,12 +7,16 @@ export default function Home() {
   const [jokesData, SetJokesData] = React.useState({})
 
   const getJokesHandler = () => {
-    JokeService.getJokes()
-      .then((res => {
-        SetJokesData(res?.data)
-        setTitleButton("Next Jokes")
-      }))
+    JokeService.getJokes().then(res => {
+      setTitleButton("Next Jokes")
+      SetJokesData(res?.data)
+    })
       .catch(err => console.log(err))
+  }
+
+  const clearJokes = () => {
+    setTitleButton("Load Jokes")
+    SetJokesData({})
   }
 
   return (
@@ -25,13 +29,13 @@ export default function Home() {
 
       <h3>Load Jokes</h3>
 
-      <div  className={styles.container}>
+      <div className={styles.container}>
         {
           jokesData?.value === null ?
             <h1></h1> : <h1>{jokesData?.value}</h1>
         }
         <button onClick={() => getJokesHandler()}>{titleButton}</button>
-        <button onClick={() => getJokesHandler()}>Clear Jokes</button>
+        <button onClick={() => clearJokes()}>Clear Jokes</button>
       </div>
 
     </div>
